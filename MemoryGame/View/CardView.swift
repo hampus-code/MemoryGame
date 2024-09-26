@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct CardView: View {
+    
+    @State var systemImagesArray = ["square.fill", "square.fill", "square.fill", "square.fill"]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        //Goes through all the images in the systemImagesArray
+        ForEach(systemImagesArray, id: \.self) { images in
+            Image(systemName: images).resizable().scaledToFit().frame(width: 70, height: 70).foregroundColor(.cardDefault)
+        }
     }
 }
 

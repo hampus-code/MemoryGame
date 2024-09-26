@@ -9,7 +9,33 @@ import SwiftUI
 
 struct GameBoardView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            GeometryReader() { geometry in //To see how big the container is?
+                VStack {
+                    VStack {
+                        HStack {
+                            
+                            //Shows the cards from the CardView
+                            CardView()
+                        }
+                        HStack {
+                            
+                            CardView()
+                        }
+                        HStack {
+                            
+                            CardView()
+                        }
+                        HStack {
+                            
+                            CardView()
+                        }
+                    }
+                }.padding().frame(width: geometry.size.width*0.9, height: geometry.size.height*0.6).background(.gameboard).cornerRadius(10).position(x: geometry.size.width/2, y: geometry.size.height/2).onAppear {
+                    print("Geometry is here \(geometry.size)")
+                }
+            }
+        }
     }
 }
 
