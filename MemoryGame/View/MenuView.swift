@@ -9,7 +9,23 @@ import SwiftUI
 
 struct MenuView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            ZStack {
+                Color(.gameboard).ignoresSafeArea()
+                
+                VStack {
+                    Text("Memory Game").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).padding(40)
+                    Spacer()
+                    NavigationLink(destination: GameView(), label: {
+                        Text("Play Game").foregroundColor(.white).frame(width: 150, height: 30).background(LinearGradient(gradient: Gradient(colors: [Color.yellow, Color.blue]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/)).cornerRadius(50).padding()
+                    })
+                    NavigationLink(destination: AboutGameView(), label: {
+                        Text("About Game").foregroundColor(.white).frame(width: 150, height: 30).background(LinearGradient(gradient: Gradient(colors: [Color.yellow, Color.blue]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/)).cornerRadius(50).padding()
+                    })
+                    Spacer()
+                }
+            }
+        }
     }
 }
 
