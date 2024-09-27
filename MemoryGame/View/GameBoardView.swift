@@ -16,19 +16,19 @@ struct GameBoardView: View {
                         HStack {
                             
                             //Shows the cards from the CardView
-                            CardView()
+                            CardView(game: Game())
                         }
                         HStack {
                             
-                            CardView()
+                            CardView(game: Game())
                         }
                         HStack {
                             
-                            CardView()
+                            CardView(game: Game())
                         }
                         HStack {
                             
-                            CardView()
+                            CardView(game: Game())
                         }
                     }
                 }.padding().frame(width: geometry.size.width*0.9, height: geometry.size.height*0.6).background(.gameboard).cornerRadius(10).position(x: geometry.size.width/2, y: geometry.size.height/2).onAppear {

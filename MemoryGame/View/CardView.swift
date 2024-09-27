@@ -9,18 +9,27 @@ import SwiftUI
 
 struct CardView: View {
     
-    @State var sportImagesArray = ["baseball", "baseball", "basketball", "basketball", "soccerball", "soccerball", "football", "football", "cricket.ball", "cricket.ball", "tennisball", "tennisball", "volleyball", "volleyball", "hockey.puck", "hockey.puck"]
+    var game: Game
     
-    @State var systemImagesArray = ["square.fill", "square.fill", "square.fill", "square.fill"]
+    @State private var selectedIndex: Int? = nil
     
     var body: some View {
         //Goes through all the images in the systemImagesArray
-        ForEach(systemImagesArray, id: \.self) { images in
-            Image(systemName: images).resizable().scaledToFit().frame(width: 70, height: 70).foregroundColor(.cardDefault)
+        ForEach(game.systemImagesArray.indices, id: \.self) { index in
+            if selectedIndex == index {
+                Image(systemName: game.sportImagesArray[index]).resizable().scaledToFit().frame(width: 70, height: 70).foregroundColor(.cardDefault)
+            } else {
+                Image(systemName: game.systemImagesArray[index])
+                    .resizable().scaledToFit().frame(width: 70, height: 70).foregroundColor(.cardDefault)
+                                            .onTapGesture {
+                                                // Update the selected index when tapped
+                                                selectedIndex = index
+                                            }
+            }
         }
     }
 }
 
 #Preview {
-    CardView()
+    CardView(game: Game())
 }
