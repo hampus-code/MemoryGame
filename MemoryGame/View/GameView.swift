@@ -9,8 +9,16 @@ import SwiftUI
 
 struct GameView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack {
+            GameBoardView()
+            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                Text("Start Game").padding(20).background(.orange).foregroundColor(.white).cornerRadius(10)
+            })
+        }
+        
     }
+    
 }
 
 #Preview {

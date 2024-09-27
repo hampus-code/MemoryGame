@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CardView: View {
     
+    @State var sportImagesArray = ["baseball", "baseball", "basketball", "basketball", "soccerball", "soccerball", "football", "football", "cricket.ball", "cricket.ball", "tennisball", "tennisball", "volleyball", "volleyball", "hockey.puck", "hockey.puck"]
+    
     @State var systemImagesArray = ["square.fill", "square.fill", "square.fill", "square.fill"]
     
     var body: some View {

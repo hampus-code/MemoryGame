@@ -13,7 +13,7 @@ struct AboutGameView: View {
             Color(.gameboard).ignoresSafeArea()
             
             VStack {
-                Text("About").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).padding(40)
+                Text("About").font(.title).padding(40)
                 
                 Text("This is a memory game. The game is about to match two images. When manage to match two cards you get 1 point and the cards dissapear from the gameboard. When the gameboard is empty you check to see how many points you have got.").padding(40)
                 Text("Good luck and happy playing!")
